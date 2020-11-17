@@ -1,0 +1,42 @@
+.Count-Body {
+    background-color: white;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 150px 1fr 1fr;
+    grid-template-areas: "Col1 Col3 Col3" "Col1 Col2 ." "Col1 Col2 .";
+}
+
+.Count-Col1 {
+    grid-area: Col1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #ee5340;
+}
+
+.Count-Col2 {
+    grid-area: Col2;
+    background: linear-gradient(45deg, #ee5340 50%, transparent 0);
+}
+
+.Count-Col3 {
+    grid-area: Col3;
+    text-align: center;
+}
+
+.Count-Incre {
+    font-family: Montserrat;
+    font-size: min(150px, 10vw) !important;
+    font-weight: 700 !important;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.Count-Counter {
+    font-family: Montserrat;
+    font-size: min(150px, 14vw) !important;
+    line-height: min(150px, 20vw);
+    font-weight: 700;
+}

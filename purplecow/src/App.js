@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import CounterComp from './Counter';
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
         <span className='Hero-text'>
           Project Purple Cow        </span>
       </div>
+      <CounterComp />
+
     </div>
   );
 }
