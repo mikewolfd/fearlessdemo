@@ -5,9 +5,12 @@ import './Counter.css';
 function CounterComp() {
     // Declare a new state variable, which we'll call "count"
     const [count, setCount] = useState([]);
-  
+    const key = process.env.REACT_APP_COUNTAPI
+    if (key === undefined ) {
+    throw new Error("Missing API KEY ")
+    }
     useEffect(() => {
-        fetch("https://api.countapi.xyz/get/1ccb732e-b55a-4404-ad3f-0f99c02fe44e")
+        fetch(`https://api.countapi.xyz/get/${key}`)
           .then(res => res.json())
           .then((result) => {
             setCount(result.value)
@@ -16,7 +19,7 @@ function CounterComp() {
   
       async function updateCount() {
         setCount(count + 1);
-        await fetch("https://api.countapi.xyz/hit/1ccb732e-b55a-4404-ad3f-0f99c02fe44e")
+        await fetch(`https://api.countapi.xyz/hit/${key}`)
     };
   
     return (

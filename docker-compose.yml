@@ -1,6 +1,10 @@
 version: "3.8"
 services:
   react-server:
-    build : ./purplecow
+    build:
+      context: ./purplecow
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_COUNTAPI: 1ccb732e-b55a-4404-ad3f-0f99c02fe44e
     ports:
       - "3000:5000"
